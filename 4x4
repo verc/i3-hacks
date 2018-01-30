@@ -1,0 +1,17 @@
+#! /bin/bash
+
+TL=https://www.coinigy.com/main/markets/GDAX/ETH/USD
+TR=https://www.coinigy.com/main/markets/GDAX/ETH/BTC
+BL=https://www.coinigy.com/main/markets/GDAX/BTC/USD
+BR=https://www.coinigy.com/main/markets/BTRX/NEO/ETH
+
+workspace="workspace 4"
+browser="exec google-chrome-stable --new-window"
+
+i3-msg "$workspace;kill;focus parent;kill;focus parent;kill;focus parent;kill;layout splith;"
+sleep 0.5
+i3-msg "$workspace;$browser $TR;$browser $TL;"
+sleep 0.5
+i3-msg "$workspace;split v;$browser $BR;"
+sleep 0.5
+i3-msg "$workspace;focus left;split v;$browser $BL;"
