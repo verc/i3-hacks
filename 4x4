@@ -7,11 +7,21 @@ BR=https://www.coinigy.com/main/markets/BTRX/NEO/ETH
 
 workspace="workspace 4"
 browser="exec google-chrome-stable --new-window"
+container=0.5
+maximize=0.25
 
 i3-msg "$workspace;kill;focus parent;kill;focus parent;kill;focus parent;kill;layout splith;"
-sleep 0.5
-i3-msg "$workspace;$browser $TR;$browser $TL;"
-sleep 0.5
-i3-msg "$workspace;split v;$browser $BR;"
-sleep 0.5
-i3-msg "$workspace;focus left;split v;$browser $BL;"
+i3-msg "$browser $TR"
+sleep $container
+i3-msg "$browser $TL;"
+sleep $container
+i3-msg "split v;$browser $BR;"
+sleep $container
+i3-msg "focus left;split v;$browser $BL"
+xdotool key F11 && sleep $maximize && i3-msg "fullscreen toggle;focus up"
+sleep $maximize
+xdotool key F11 && sleep $maximize && i3-msg "fullscreen toggle;focus right"
+sleep $maximize
+xdotool key F11 && sleep $maximize && i3-msg "fullscreen toggle;focus down"
+sleep $maximize
+xdotool key F11 && sleep $maximize && i3-msg "fullscreen toggle;focus left"
