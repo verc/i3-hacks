@@ -7,8 +7,8 @@ BR=https://www.coinigy.com/main/markets/BTRX/NEO/ETH
 
 workspace="workspace 4"
 browser="exec google-chrome-stable --new-window"
-container=0.5
-maximize=0.25
+container=1
+maximize=0.5
 
 i3-msg "$workspace;kill;focus parent;kill;focus parent;kill;focus parent;kill;layout splith;"
 i3-msg "$browser $TL"
