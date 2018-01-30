@@ -11,9 +11,9 @@ container=0.5
 maximize=0.25
 
 i3-msg "$workspace;kill;focus parent;kill;focus parent;kill;focus parent;kill;layout splith;"
-i3-msg "$browser $TR"
+i3-msg "$browser $TL"
 sleep $container
-i3-msg "$browser $TL;"
+i3-msg "$browser $TR;"
 sleep $container
 i3-msg "split v;$browser $BR;"
 sleep $container
@@ -25,3 +25,7 @@ sleep $maximize
 xdotool key F11 && sleep $maximize && i3-msg "fullscreen toggle;focus down"
 sleep $maximize
 xdotool key F11 && sleep $maximize && i3-msg "fullscreen toggle;focus left"
+xdotool key Control_L+Shift_L+f && i3-msg "focus up"
+xdotool key Control_L+Shift_L+f && i3-msg "focus right"
+xdotool key Control_L+Shift_L+f && i3-msg "focus down"
+xdotool key Control_L+Shift_L+f && i3-msg "focus left"
