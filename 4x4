@@ -1,11 +1,11 @@
 #! /bin/bash
 
-TL=https://www.coinigy.com/main/markets/GDAX/ETH/USD
-TR=https://www.coinigy.com/main/markets/GDAX/ETH/BTC
-BL=https://www.coinigy.com/main/markets/GDAX/BTC/USD
-BR=https://www.coinigy.com/main/markets/BTRX/NEO/ETH
+TL=https://www.coinigy.com/main/markets/$1
+TR=https://www.coinigy.com/main/markets/$2
+BL=https://www.coinigy.com/main/markets/$3
+BR=https://www.coinigy.com/main/markets/$4
 
-workspace="workspace 4"
+workspace="workspace $1"
 browser="exec google-chrome-stable --new-window"
 container=1
 maximize=0.5
